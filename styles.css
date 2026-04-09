@@ -246,7 +246,7 @@ body {
         padding: 20px;
         border-radius: 12px;
         box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-        display: flex;
+        display: none;
         flex-direction: column;
         gap: 20px;
     }
@@ -333,7 +333,10 @@ body {
             gap: 20px;
         }
 
-        /* Individual Book */
+
+
+        /*------ Book containers ------*/
+        
         .books-instance {
             background-color: #f9f9f9;
             border-radius: 12px;
@@ -466,3 +469,86 @@ body {
 
         
     /*------ Overview Members ------ */
+
+
+    .content_Members {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .members_navigation {
+            display: flex;
+            align-items: center;
+            gap: 15px; 
+    }
+
+
+
+
+
+
+    /*------ Members Container ------*/
+        .members-container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        /* Each member row */
+        .members-instance {
+            width: 100%;
+            background-color: #ffffff;
+            padding: 15px 20px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between; /* pushes button right */
+            transition: 0.2s;
+        }
+
+        /* Hover effect */
+        .members-instance:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+
+        /* Left side (name + ID) */
+        .member-info {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .member-info h2 {
+            font-size: 16px;
+            color: #333;
+            margin-bottom: 4px;
+        }
+
+        .member-info p {
+            font-size: 13px;
+            color: #666;
+        }
+
+        /* Button */
+        .view-btn {
+            padding: 8px 16px;
+            border: none;
+            border-radius: 8px;
+            background-color: #34344a;
+            color: #fff;
+            font-size: 13px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        /* Hover */
+        .view-btn:hover {
+            background-color: #4a4a63;
+        }
