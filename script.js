@@ -2,13 +2,13 @@ const ctx = document.getElementById('bookDonutChart').getContext('2d');
 
 // Data
 const data = {
-    labels: ['Available', 'Overdue', 'Returned'],
+    labels: ['Available', 'Overdue', 'Borrwed'],
     datasets: [{
         data: [453, 12, 87],
         backgroundColor: [
-            'rgba(54, 162, 235, 0.7)', // Available
-            'rgba(255, 99, 132, 0.7)', // Overdue
-            'rgba(75, 192, 192, 0.7)'  // Returned
+            '#8979FF', // Available
+            '#FF928A', // Overdue
+            '#3CC3DF'  // Borrwed
         ],
         borderWidth: 0,
         cutout: '60%' // smaller cutout = thicker donut
