@@ -1,3 +1,49 @@
+// ------------------ Section toggle code ------------------
+const navLinks = document.querySelectorAll('.nav-links a');
+const overviewContent = document.querySelector('.content_overview');
+const booksContent = document.querySelector('.content_books');
+const membersContent = document.querySelector('.content_Members');
+
+// Helper to hide all content sections
+function hideAllContent() {
+    overviewContent.style.display = 'none';
+    booksContent.style.display = 'none';
+    membersContent.style.display = 'none';
+}
+
+// Show dashboard by default
+hideAllContent();
+overviewContent.style.display = 'flex';
+
+// Add click listeners to sidebars
+navLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+        e.preventDefault();
+
+        // Remove active class
+        navLinks.forEach(l => l.classList.remove('active'));
+        link.classList.add('active');
+
+        hideAllContent();
+
+        const text = link.textContent.trim().toLowerCase();
+
+        if(text === 'dashboard') {
+            overviewContent.style.display = 'flex';
+        } else if(text === 'books') {
+            booksContent.style.display = 'flex';
+        } else if(text === 'members') {
+            membersContent.style.display = 'flex';
+        } else if(text === 'borrow records') {
+            // placeholder
+            alert('Borrow Records section not implemented yet');
+        }
+    });
+});
+
+
+
+// ------------------ Donut Chart for Books Status ------------------
 const ctx = document.getElementById('bookDonutChart').getContext('2d');
 
 // Data
