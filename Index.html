@@ -1,49 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Library Management System</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
 
-<div class="container">
-    
-    <!-- Sidebar -->
-    <div class="sidebar">
-        <p class="logo"><b>Navigation</b></p>
-        <ul class="nav-links">
-            <li><a href="#"><img src="Images/Dashboard_Icon.png" alt="Dashboard"> Dashboard</a></li>
-            <li><a href="#"><img src="Images/Books_Icon.png" alt="Books"> Books</a></li>
-            <li><a href="#"><img src="Images/Members_Icon.png" alt="Members"> Members</a></li>
-            <li><a href="#"><img src="Images/Borrow_Icon.png" alt="Borrow Records"> Borrow Records</a></li>
-        </ul>
-        <hr class="divider">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Library Management System</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+
+    <body>
+
+    <div class="container">
+        
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <p class="logo"><b>Navigation</b></p>
+            <ul class="nav-links">
+                <li><a href="#"><img src="Images/Dashboard_Icon.png" alt="Dashboard"> Dashboard</a></li>
+                <li><a href="#"><img src="Images/Books_Icon.png" alt="Books"> Books</a></li>
+                <li><a href="#"><img src="Images/Members_Icon.png" alt="Members"> Members</a></li>
+                <li><a href="#"><img src="Images/Borrow_Icon.png" alt="Borrow Records"> Borrow Records</a></li>
+            </ul>
+            <hr class="divider">
 
 
-    </div>
-    
-
-    <!-- Main Content -->
-    <div class="main-content">
-
-    <div class="banner">
-        <h2 class="welcome-text">Library Management System</h2>
-
-        <div class="user-info">
-            <img src="Images/Default_User_Profile.png" alt="Profile" class="profile-pic">
-            <div class="user-text">
-                <p class="username">Username</p>
-                <p class="role">ADMIN</p>
-            </div>
-            <button class="logout-btn">
-                <img src="Images/Log_out_Icon.png" alt="Log Out">
-            </button>
         </div>
-    </div>
+        
 
-</div>
+        <!-- Main Content -->
+        <div class="main-content">
 
-</body>
+            <div class="banner">
+                <h2 class="welcome-text">Library Management System</h2>
+
+                <div class="user-info">
+                    <img src="Images/Default_User_Profile.png" alt="Profile" class="profile-pic">
+                    <div class="user-text">
+                        <p class="username">Username</p>
+                        <p class="role">ADMIN</p>
+                    </div>
+                    <button class="logout-btn">
+                        <img src="Images/Log_out_Icon.png" alt="Log Out">
+                    </button>
+                </div>
+            </div>
+
+            <div class="overview-area">
+
+                <div class="overview-card">
+                    <img src="Images/Total_Users_Icon.png" alt="Total Users">
+                    <p class="card-number">0</p>
+                    <h3>Total Users</h3>
+                </div>
+
+                <div class="overview-card">
+                    <img src="Images/Total_Books_Icon.png" alt="Total Books">
+                    <p class="card-number">0</p>
+                    <h3>Total Books</h3>
+                </div>
+
+                <div class="overview-card">
+                    <img src="Images/Borrowed_Books_Icon.png" alt="Borrowed Books">
+                    <p class="card-number">0</p>
+                    <h3>Borrowed Books</h3>
+                </div>
+
+                <div class="overview-card">
+                    <img src="Images/Borrowed_Books_Icon.png" alt="Overdue Books">
+                    <p class="card-number">0</p>
+                    <h3>Overdue Books</h3>
+                </div>
+
+            </div>
+
+
+
+
+        </div>
+
+    </body>
 </html>

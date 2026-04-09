@@ -20,7 +20,7 @@ body {
 
 .sidebar {
     width: 350px;
-    height: calc(100vh - 40px); /* adjust for padding */
+    height: calc(100vh - 40px);
     background-color: #ffffff;
     padding: 20px;
     border-radius: 16px;
@@ -155,4 +155,56 @@ body {
 
 .logout-btn:hover {
     background-color: rgba(0, 0, 0, 0.1); 
+}
+
+
+/*-------------------- OVERVIEW AREA --------------------*/
+
+/* Container */
+.overview-area {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+/* card style */
+.overview-card {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    text-align: center;
+    transition: transform 0.2s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Hover */
+.overview-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Icon */
+.overview-card img {
+    margin-top: 20px;
+    width: 40px;
+    height: 40px;
+    margin-bottom: 18px; 
+}
+
+/* Numbers */
+.card-number {
+    font-size: 28px;
+    font-weight: bold;
+    color: #333;
+    margin-top: 6px; 
+}
+
+/* Information */
+.overview-card h3 {
+    font-size: 16px;
+    color: #666;
+    margin-top: 4px; 
 }
