@@ -15,78 +15,119 @@
 
     <body>
 
-    <div class="container">
-        
-        <!-- Sidebar -->
-        <div class="sidebar">
-            <p class="logo"><b>Navigation</b></p>
-            <ul class="nav-links">
-                <li><a href="#"><img src="Images/Dashboard_Icon.png" alt="Dashboard"> Dashboard</a></li>
-                <li><a href="#"><img src="Images/Books_Icon.png" alt="Books"> Books</a></li>
-                <li><a href="#"><img src="Images/Members_Icon.png" alt="Members"> Members</a></li>
-                <li><a href="#"><img src="Images/Borrow_Icon.png" alt="Borrow Records"> Borrow Records</a></li>
-            </ul>
-            <hr class="divider">
+        <div class="container">
+            
+            <!-- Sidebar -->
+            <div class="sidebar">
+                <p class="logo"><b>Navigation</b></p>
+                <ul class="nav-links">
+                    <li><a href="#"><img src="Images/Dashboard_Icon.png" alt="Dashboard"> Dashboard</a></li>
+                    <li><a href="#"><img src="Images/Books_Icon.png" alt="Books"> Books</a></li>
+                    <li><a href="#"><img src="Images/Members_Icon.png" alt="Members"> Members</a></li>
+                    <li><a href="#"><img src="Images/Borrow_Icon.png" alt="Borrow Records"> Borrow Records</a></li>
+                </ul>
+                <hr class="divider">
 
 
-        </div>
-        
+            </div>
+            
 
-        <!-- Main Content -->
-        <div class="main-content">
+            <!-- Main Content -->
+            <div class="main-content">
 
-            <div class="banner">
-                <h2 class="welcome-text">Library Management System</h2>
+                <div class="banner">
+                    <h2 class="welcome-text">Library Management System</h2>
 
-                <div class="user-info">
-                    <img src="Images/Default_User_Profile.png" alt="Profile" class="profile-pic">
-                    <div class="user-text">
-                        <p class="username">Username</p>
-                        <p class="role">ADMIN</p>
+                    <div class="user-info">
+                        <img src="Images/Default_User_Profile.png" alt="Profile" class="profile-pic">
+                        <div class="user-text">
+                            <p class="username">Username</p>
+                            <p class="role">ADMIN</p>
+                        </div>
+                        <button class="logout-btn">
+                            <img src="Images/Log_out_Icon.png" alt="Log Out">
+                        </button>
                     </div>
-                    <button class="logout-btn">
-                        <img src="Images/Log_out_Icon.png" alt="Log Out">
-                    </button>
+                </div>
+
+                <div class="overview-area">
+
+                    <div class="overview-card">
+                        <img src="Images/Total_Users_Icon.png" alt="Total Users">
+                        <p class="card-number">0</p>
+                        <h3>Total Users</h3>
+                    </div>
+
+                    <div class="overview-card">
+                        <img src="Images/Total_Books_Icon.png" alt="Total Books">
+                        <p class="card-number">0</p>
+                        <h3>Total Books</h3>
+                    </div>
+
+                    <div class="overview-card">
+                        <img src="Images/Borrowed_Books_Icon.png" alt="Borrowed Books">
+                        <p class="card-number">0</p>
+                        <h3>Borrowed Books</h3>
+                    </div>
+
+                    <div class="overview-card">
+                        <img src="Images/Borrowed_Books_Icon.png" alt="Overdue Books">
+                        <p class="card-number">0</p>
+                        <h3>Overdue Books</h3>
+                    </div>
+
+                </div>
+
+                <div class="content_overview">
+                    <h2>Book Circulation</h2>
+                    <canvas id="bookDonutChart" width="600" height="600"></canvas>
+                </div>
+
+
+                <div class="content_books">
+
+                    <h2>Book Records</h2>
+                    <p>Collection</p>
+
+
+                    <div class="books_navigation">
+        
+                        <!-- Search Bar -->
+                        <div class="search-bar">
+                            <img src="Images/Seach_Icon.png" alt="Search Left" class="search-icon left">
+                            <input type="text" placeholder="Search books..." id="bookSearch">
+                            <img src="Images/Magnifying_glass.png" alt="Search Right" class="search-icon right">
+                        </div>
+
+                        <!-- Books Button -->
+                        <div class="book-actions">
+                                <button class="sort-book-btn">
+                                    <img src="Images/Sort_Icon.png" alt="Sort Books">
+                                </button>
+
+                                <button class="add-book-btn">
+                                    <img src="Images/Add_Icon.png" alt="Add Book">
+                                    Add Book
+                                </button>
+
+                        </div>
+                    </div>
+
+
+                    <div class="books-container">
+                        <div class="books-instance">
+                            <img src="Images/Book_Cover.png" alt="Book Cover" class="book-cover">
+                            <h2>Title</h2>
+                            <p>What will it take just for me to have it all?</p>
+
+                            <span class="status available">Available</span>
+                        </div>
+                    </div>
+
+
+
                 </div>
             </div>
-
-            <div class="overview-area">
-
-                <div class="overview-card">
-                    <img src="Images/Total_Users_Icon.png" alt="Total Users">
-                    <p class="card-number">0</p>
-                    <h3>Total Users</h3>
-                </div>
-
-                <div class="overview-card">
-                    <img src="Images/Total_Books_Icon.png" alt="Total Books">
-                    <p class="card-number">0</p>
-                    <h3>Total Books</h3>
-                </div>
-
-                <div class="overview-card">
-                    <img src="Images/Borrowed_Books_Icon.png" alt="Borrowed Books">
-                    <p class="card-number">0</p>
-                    <h3>Borrowed Books</h3>
-                </div>
-
-                <div class="overview-card">
-                    <img src="Images/Borrowed_Books_Icon.png" alt="Overdue Books">
-                    <p class="card-number">0</p>
-                    <h3>Overdue Books</h3>
-                </div>
-
-            </div>
-
-            <div class="content_overview">
-                <h2>Book Circulation</h2>
-                <canvas id="bookDonutChart" width="600" height="600"></canvas>
-            </div>
-
-
-
-
-        </div>
 
         <script src="script.js"></script>
     </body>
