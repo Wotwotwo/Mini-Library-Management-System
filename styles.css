@@ -208,3 +208,30 @@ body {
     color: #666;
     margin-top: 4px; 
 }
+
+
+
+/*-------------------- CONTENT AREA --------------------*/
+
+    /*------ Overview Graph ------ */
+    .content_overview {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+
+    /* Center chart in content */
+    .content_overview canvas {
+        display: block;
+        margin: 20px auto;
+        max-width: 250px;
+        height: auto;
+    }
+
+    /* Graph */
+    #bookDonutChart {
+        max-width: 500px;
+        max-height: 500px;
+        margin: auto;
+    }
