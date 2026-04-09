@@ -119,7 +119,7 @@ body {
 .user-text {
     display: flex;
     flex-direction: column;
-    text-align: left; /* better alignment */
+    text-align: left; 
 }
 
 .username {
@@ -138,21 +138,21 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 6px; /* make it square-ish */
-    background-color: transparent; /* no background */
+    padding: 6px; 
+    background-color: transparent;
     border: none;
     border-radius: 6px;
     cursor: pointer;
     transition: 0.3s;
-    margin-left: 20px; /* increase space from username/role */
+    margin-left: 20px; 
 
 }
 
 .logout-btn img {
-    width: 20px; /* adjust size */
+    width: 20px;
     height: 20px;
 }
 
 .logout-btn:hover {
-    background-color: rgba(0, 0, 0, 0.1); /* subtle hover effect */
+    background-color: rgba(0, 0, 0, 0.1); 
 }
