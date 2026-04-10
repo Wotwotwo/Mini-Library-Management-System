@@ -56,6 +56,10 @@ body {
     padding-left: 15px;
 }
 
+
+.nav-links a.active {
+    background-color: #E8DEF8;
+}
 /* Icons */
 .nav-links img {
     width: 20px;

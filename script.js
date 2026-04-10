@@ -4,43 +4,46 @@ const overviewContent = document.querySelector('.content_overview');
 const booksContent = document.querySelector('.content_books');
 const membersContent = document.querySelector('.content_Members');
 
-// Helper to hide all content sections
+// Hide all sections
 function hideAllContent() {
     overviewContent.style.display = 'none';
     booksContent.style.display = 'none';
     membersContent.style.display = 'none';
 }
 
-// Show dashboard by default
+// Default (Dashboard)
 hideAllContent();
 overviewContent.style.display = 'flex';
+navLinks[0].classList.add('active'); // highlight dashboard
 
-// Add click listeners to sidebars
-navLinks.forEach(link => {
+// Click events
+navLinks.forEach((link, index) => {
     link.addEventListener('click', (e) => {
         e.preventDefault();
 
-        // Remove active class
+        // Remove highlight
         navLinks.forEach(l => l.classList.remove('active'));
+
+        // Add highlight
         link.classList.add('active');
 
         hideAllContent();
 
-        const text = link.textContent.trim().toLowerCase();
-
-        if(text === 'dashboard') {
+        // Switch content using index
+        if (index === 0) {
             overviewContent.style.display = 'flex';
-        } else if(text === 'books') {
+        } 
+        else if (index === 1) {
             booksContent.style.display = 'flex';
-        } else if(text === 'members') {
+        } 
+        else if (index === 2) {
             membersContent.style.display = 'flex';
-        } else if(text === 'borrow records') {
-            // placeholder
+        } 
+        else if (index === 3) {
             alert('Borrow Records section not implemented yet');
         }
     });
 });
-
 
 
 // ------------------ Donut Chart for Books Status ------------------
