@@ -300,7 +300,7 @@
 
                         <div class="form-group">
                             <label>Age</label>
-                            <input type="number" min="1900" max="2026">
+                            <input type="number" min="0" max="500">
                         </div>
 
 
@@ -362,8 +362,7 @@
                             <label>Status</label>
                             <select>
                                 <option>Borrowed</option>
-                                <option>Returned</option>
-                                <option>Overdue</option>
+                                <option>Available</option>
                             </select>
                         </div>
 
@@ -372,6 +371,165 @@
                         </div>
 
                         </form>
+                    </div>
+                </div>
+
+
+                <!-- Information Pop Up -->
+                <div class="MemberInfoModal">
+                    <div class="modal-content">
+                        <span class="close" onclick="closeModal()">&times;</span>
+                        
+                        <h2>Member Information</h2>
+
+                        <div class="member-info-content">
+                            
+                            <div class="member-header">
+                                <h1>John Doe</h1>
+                                <button class="edit-btn">Edit Information</button>
+                                <button class="delete-btn">Delete Member</button>
+                            </div>
+
+                            <div class="info-row">
+                                <span>ID Number:</span>
+                                <p>#000001</p>
+                            </div>
+
+                            <div class="info-row">
+                                <span>Age:</span>
+                                <p>18</p>
+                            </div>
+
+                            <div class="info-row">
+                                <span>Course:</span>
+                                <p>Computer Science</p>
+                            </div>
+
+                            <div class="info-row">
+                                <span>Year:</span>
+                                <p>2</p>
+                            </div>
+
+                            <div class="info-row">
+                                <span>Contact Number:</span>
+                                <p>09084335123</p>
+                            </div>
+
+                            <div class="info-row">
+                                <span>Email:</span>
+                                <p>john.doe@example.com</p>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="BookInfoModal">
+                    <div class="modal-content">
+
+                        <span class="close" onclick="closeModal()">&times;</span>
+
+                        <h2>Book Information</h2>
+
+                        <div class="book-info-content">
+
+                            <!-- Book header -->
+                            <div class="book-header">
+                                <img src="Images/Book_Cover.png" alt="Book Cover" class="book-info-cover">
+
+                                <div class="book-title-section">
+                                    <h1>I Have No Mouth But I Must Scream</h1>
+                                    <button class="edit-btn">Edit Book</button>
+                                    <button class="delete-btn">Delete Book</button>
+                                </div>
+                            </div>
+
+                            <div class="info-row">
+                                <span>Book ID:</span>
+                                <p>#B00001</p>
+                            </div>
+
+                            <div class="info-row">
+                                <span>Author:</span>
+                                <p>Harlan Ellison</p>
+                            </div>
+
+                            <div class="info-row">
+                                <span>Genre:</span>
+                                <p>Horror / Sci-Fi</p>
+                            </div>
+
+                            <div class="info-row">
+                                <span>Published Year:</span>
+                                <p>1967</p>
+                            </div>
+
+                            <div class="info-row">
+                                <span>Status:</span>
+                                <p>Available</p>
+                            </div>
+
+                            <div class="info-row">
+                                <span>Description:</span>
+                                <p>A dystopian short story about AI torture and survival.</p>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="BorrowInfoModal">
+                    <div class="modal-content">
+
+                        <span class="close" onclick="closeModal()">&times;</span>
+
+                        <h2>Borrow Record Information</h2>
+
+                        <div class="borrow-info-content">
+
+                            <div class="borrow-header">
+
+                                <img src="Images/Book_Cover.png" alt="Book Cover" class="borrow-info-cover">
+
+                                <div class="book-title-section">
+                                    <h1>I Have No Mouth But I Must Scream</h1>
+                                    <button class="edit-btn">Edit Record</button>
+                                    <button class="delete-btn">Delete Record</button>
+                                </div>
+
+                            </div>
+
+
+                            <div class="info-row">
+                                <span>Borrow ID:</span>
+                                <p>#000001</p>
+                            </div>
+
+                            <div class="info-row">
+                                <span>Student ID:</span>
+                                <p>#000001</p>
+                            </div>
+
+                            <div class="info-row">
+                                <span>Borrow Date:</span>
+                                <p>2026-01-01</p>
+                            </div>
+
+                            <div class="info-row">
+                                <span>Due Date:</span>
+                                <p>2026-01-15</p>
+                            </div>
+
+                            <div class="info-row">
+                                <span>Status:</span>
+                                <p>Overdue</p>
+                            </div>
+
+                        </div>
+
                     </div>
                 </div>
       

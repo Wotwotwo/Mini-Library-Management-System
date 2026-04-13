@@ -64,6 +64,108 @@ overviewCards.forEach((card, index) => {
     });
 });
 
+
+
+// ------------------ Modals and POPUPS ------------------
+
+// ===================== MODALS =====================
+const bookModal = document.getElementById("bookModal");
+const membersModal = document.getElementById("membersModal");
+const borrowModal = document.getElementById("borrowModal");
+
+// Info modals
+const memberInfoModal = document.querySelector(".MemberInfoModal");
+const bookInfoModal = document.querySelector(".BookInfoModal");
+const borrowInfoModal = document.querySelector(".BorrowInfoModal");
+
+
+// ===================== OPEN MODALS =====================
+
+// Add Book
+document.querySelector(".content_books .add-book-btn")
+.addEventListener("click", () => {
+    bookModal.style.display = "flex";
+});
+
+// Add Member
+document.querySelector(".content_Members .add-book-btn")
+.addEventListener("click", () => {
+    membersModal.style.display = "flex";
+});
+
+// Add Borrow
+document.querySelector(".content_borrow .add-book-btn")
+?.addEventListener("click", () => {
+    borrowModal.style.display = "flex";
+});
+
+
+// ===================== CLOSE MODAL =====================
+function closeModal() {
+    bookModal.style.display = "none";
+    membersModal.style.display = "none";
+    borrowModal.style.display = "none";
+
+    memberInfoModal.style.display = "none";
+    bookInfoModal.style.display = "none";
+    borrowInfoModal.style.display = "none";
+}
+
+
+// X BUTTONS
+document.querySelectorAll(".close").forEach(btn => {
+    btn.addEventListener("click", closeModal);
+});
+
+
+// OUTSIDE CLICK CLOSE
+window.addEventListener("click", (e) => {
+    if (e.target === bookModal) closeModal();
+    if (e.target === membersModal) closeModal();
+    if (e.target === borrowModal) closeModal();
+
+    if (e.target === memberInfoModal) closeModal();
+    if (e.target === bookInfoModal) closeModal();
+    if (e.target === borrowInfoModal) closeModal();
+});
+
+
+// ESC KEY CLOSE
+window.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeModal();
+});
+
+
+// ===================== OPEN INFO MODALS =====================
+
+// MEMBER VIEW BUTTON
+document.querySelectorAll(".view-btn").forEach(btn => {
+    btn.addEventListener("click", () => {
+        memberInfoModal.style.display = "flex";
+    });
+});
+
+
+// BOOK CARD CLICK
+document.querySelectorAll(".books-instance").forEach(card => {
+    card.addEventListener("click", () => {
+        bookInfoModal.style.display = "flex";
+    });
+});
+
+
+// BORROW ROW CLICK
+document.querySelectorAll(".borrow-instance").forEach(card => {
+    card.addEventListener("click", () => {
+        borrowInfoModal.style.display = "flex";
+    });
+});
+
+
+
+
+
+
 // ------------------ Donut Chart for Books Status ------------------
 const ctx = document.getElementById('bookDonutChart').getContext('2d');
 
