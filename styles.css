@@ -19,6 +19,8 @@ body {
 }
 
 .sidebar {
+    position: sticky;
+    top: 20px;
     width: 350px;
     height: calc(100vh - 40px);
     background-color: #ffffff;
@@ -183,6 +185,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    cursor: pointer;
 }
 
 /* Hover */
@@ -556,3 +559,178 @@ body {
         .view-btn:hover {
             background-color: #4a4a63;
         }
+
+
+
+
+
+    /*------ Overview Borrow ------ */
+
+
+
+    .content_borrow {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        display: none;
+        flex-direction: column;
+        gap: 20px;
+    }
+        /* Container */
+        .borrow-container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        /* Each borrow row */
+        .borrow-instance {
+            width: 100%;
+            background-color: #ffffff;
+            padding: 18px 22px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: 0.2s;
+        }
+
+        /* Hover */
+        .borrow-instance:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+
+        /* General Information*/
+        .borrow-info {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+        }
+
+        .borrow-info img {
+            width: 15%;
+            height: 100%;
+            border-radius: 8px;
+            object-fit: cover;
+        }
+
+        /* Title  */
+        .borrow-info h2 {
+            grid-column: span 2; /* takes full row */
+            font-size: 16px;
+            color: #333;
+            margin-bottom: 6px;
+        }
+
+        .borrow-info p {
+            font-size: 13px;
+            color: #666;
+        }
+
+        /* Status */
+        .status {
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+
+
+        /* Status colors */
+        .status.overdue {
+            background-color: rgba(255, 99, 132, 0.15);
+            color: #ff6384;
+        }
+
+        .status.returned {
+            background-color: rgba(75, 192, 192, 0.15);
+            color: #4bc0c0;
+        }
+
+        .status.borrowed {
+            background-color: rgba(255, 206, 86, 0.2);
+            color: #ff9f40;
+        }
+
+
+/* -------------------- POP UPS -------------------- */
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+}
+
+.modal-content {
+  background: white;
+  width: 400px;
+  margin: 5% auto;
+  padding: 20px;
+  border-radius: 12px;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.close {
+  float: right;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+h2 {
+  margin-bottom: 15px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+label {
+  font-size: 14px;
+  margin-bottom: 3px;
+}
+
+input, select, textarea {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+textarea {
+  resize: none;
+  height: 60px;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+button {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+button[type="submit"] {
+  background: #4CAF50;
+  color: white;
+}
+
+.cancel {
+  background: #ccc;
+}

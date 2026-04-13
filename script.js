@@ -3,12 +3,17 @@ const navLinks = document.querySelectorAll('.nav-links a');
 const overviewContent = document.querySelector('.content_overview');
 const booksContent = document.querySelector('.content_books');
 const membersContent = document.querySelector('.content_Members');
+const borrowContent = document.querySelector('.content_borrow');
+
+
+const overviewCards = document.querySelectorAll('.overview-card');
 
 // Hide all sections
 function hideAllContent() {
     overviewContent.style.display = 'none';
     booksContent.style.display = 'none';
     membersContent.style.display = 'none';
+    borrowContent.style.display = 'none';
 }
 
 // Default (Dashboard)
@@ -40,11 +45,24 @@ navLinks.forEach((link, index) => {
             membersContent.style.display = 'flex';
         } 
         else if (index === 3) {
-            alert('Borrow Records section not implemented yet');
+            borrowContent.style.display = 'flex';
         }
     });
 });
 
+
+overviewCards.forEach((card, index) => {
+    card.addEventListener('click', () => {
+
+        if (index === 0) {
+            navLinks[2].click();
+        } else if (index === 1) {
+            navLinks[1].click();
+        } else if (index === 2 || index === 3) {
+            navLinks[3].click();
+        }
+    });
+});
 
 // ------------------ Donut Chart for Books Status ------------------
 const ctx = document.getElementById('bookDonutChart').getContext('2d');
