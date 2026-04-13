@@ -2,6 +2,7 @@
 <html lang="en">
 
     <head>
+
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Library Management System</title>
@@ -11,6 +12,7 @@
 
         <!-- Chart logic -->
         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
     </head>
 
     <body>
@@ -78,6 +80,9 @@
 
                 </div>
 
+
+
+                <!-- Content Window -->
                 <div class="content_overview">
                     <h2>Book Circulation</h2>
                     <canvas id="bookDonutChart" width="600" height="600"></canvas>
@@ -187,8 +192,9 @@
 
                                 <div class="borrow-details">
                                     <h2>I have no mouth but I must scream</h2>
-                                    <p><b>Student ID:</b> #000000</p>
                                     <p><b>Borrow ID:</b> 123123</p>
+                                    <p><b>Student ID:</b> #000000</p>
+                                    <p><b>Book ID:</b> 2323</p>
                                     <p><b>Borrow Date:</b> 2024-01-01</p>
                                     <p><b>Due Date:</b> 2024-01-15</p>
                                     <p><b>Status:</b> Overdue</p>
@@ -205,60 +211,170 @@
                 </div>
 
 
-            <div id="bookModal" class="modal">
-                <div class="modal-content">
-                    <span class="close" onclick="closeModal()">&times;</span>
-                    
-                    <h2>Add New Book</h2>
 
-                    <form id="bookForm">
-                    <div class="form-group">
-                        <label>Book Title</label>
-                        <input type="text" placeholder="Enter book title" required>
-                    </div>
 
-                    <div class="form-group">
-                        <label>Author</label>
-                        <input type="text" placeholder="Enter author name" required>
-                    </div>
+                <!-- Form Pop Up -->
 
-                    <div class="form-group">
-                        <label>Genre</label>
-                        <input type="text" placeholder="e.g. Fiction, Science">
-                    </div>
+                <div id="bookModal" class="modal">
+                    <div class="modal-content">
+                        <span class="close" onclick="closeModal()">&times;</span>
+                        
+                        <h2>Add New Book</h2>
 
-                    <div class="form-group">
-                        <label>ISBN</label>
-                        <input type="text" placeholder="Enter ISBN number">
-                    </div>
+                        <form id="bookForm">
 
-                    <div class="form-group">
-                        <label>Published Year</label>
-                        <input type="number" min="1900" max="2026">
-                    </div>
 
-                    <div class="form-group">
-                        <label>Status</label>
-                        <select>
-                        <option>Available</option>
-                        <option>Borrowed</option>
-                        <option>Reserved</option>
-                        </select>
-                    </div>
+                        <div class="form-group">
+                            <label>Book ID</label>
+                            <input type="text" placeholder="Enter book ID" required>
+                        </div>
 
-                    <div class="form-group">
-                        <label>Description</label>
-                        <textarea placeholder="Short description..."></textarea>
-                    </div>
+                        <div class="form-group">
+                            <label>Book Title</label>
+                            <input type="text" placeholder="Enter book title" required>
+                        </div>
 
-                    <div class="form-actions">
-                        <button type="submit">Save Book</button>
-                        <button type="button" onclick="closeModal()" class="cancel">Cancel</button>
+                        <div class="form-group">
+                            <label>Author</label>
+                            <input type="text" placeholder="Enter author name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Genre</label>
+                            <input type="text" placeholder="e.g. Fiction, Science">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Published Year</label>
+                            <input type="number" min="1900" max="2026">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Status</label>
+                            <select>
+                            <option>Available</option>
+                            <option>Borrowed</option>
+                            <option>Reserved</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Description</label>
+                            <textarea placeholder="Short description..."></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Book Cover Image</label>
+                            <input type="file" id="bookImage" accept="image/*">
+                        </div>
+
+                        <img id="imagePreview" class="image-preview" alt="Preview">
+
+                        
+                        <div class="form-actions">
+                            <button type="submit"><b>Submit</b></button>
+                        </div>
+
+                        </form>
                     </div>
-                    </form>
                 </div>
-            </div>
-                
+
+                <div id="membersModal" class="modal">
+                    <div class="modal-content">
+                        <span class="close" onclick="closeModal()">&times;</span>
+                        
+                        <h2>Add New Member</h2>
+
+                        <form id="membersForm">
+
+
+                        <div class="form-group">
+                            <label>Member ID</label>
+                            <input type="text" placeholder="Enter member ID" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Member Name</label>
+                            <input type="text" placeholder="Enter member name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Age</label>
+                            <input type="number" min="1900" max="2026">
+                        </div>
+
+
+                        <div class="form-group">
+                            <label>Member Email</label>
+                            <input type="email" placeholder="Enter member email" required>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label>School Year</label>
+                            <input type="number" min="1900" max="2026">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Contact Number</label>
+                            <input type="number" min="1900" max="2026">
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button type="submit"><b>Submit</b></button>
+                        </div>
+
+                        </form>
+                    </div>
+                </div>
+
+                <div id="borrowModal" class="modal">
+                    <div class="modal-content">
+                        <span class="close" onclick="closeModal()">&times;</span>
+                        
+                        <h2>Add Borrow Record</h2>
+
+                        <form id="borrowForm">
+
+                        <div class="form-group">
+                            <label>Member ID</label>
+                            <input type="text" placeholder="Enter member ID" required>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label>Book ID</label>
+                            <input type="text" placeholder="Enter book ID" required>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label>Borrow Date</label>
+                            <input type="date" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Due Date</label>
+                            <input type="date" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Status</label>
+                            <select>
+                                <option>Borrowed</option>
+                                <option>Returned</option>
+                                <option>Overdue</option>
+                            </select>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="submit"><b>Submit</b></button>
+                        </div>
+
+                        </form>
+                    </div>
+                </div>
+      
 
             </div>
 
