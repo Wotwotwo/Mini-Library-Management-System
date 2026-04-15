@@ -67,6 +67,101 @@ overviewCards.forEach((card, index) => {
 
 
 // ------------------ Modals and POPUPS ------------------
+// ===================== EDIT FUNCTIONALITY =====================
+
+// BOOK EDIT
+document.querySelector(".BookInfoModal .edit-btn")
+?.addEventListener("click", () => {
+    bookModal.style.display = "flex";
+
+    // Change modal title
+    bookModal.querySelector("h2").textContent = "Edit Book";
+});
+
+// MEMBER EDIT
+document.querySelector(".MemberInfoModal .edit-btn")
+?.addEventListener("click", () => {
+    membersModal.style.display = "flex";
+
+    membersModal.querySelector("h2").textContent = "Edit Member";
+});
+
+// BORROW EDIT
+document.querySelector(".BorrowInfoModal .edit-btn")
+?.addEventListener("click", () => {
+    borrowModal.style.display = "flex";
+
+    borrowModal.querySelector("h2").textContent = "Edit Borrow Record";
+});
+
+
+// ===================== DELETE SYSTEM =====================
+
+const confirmDeleteModal = document.getElementById("confirmDeleteModal");
+const confirmMessage = document.getElementById("confirmMessage");
+const confirmDeleteBtn = document.getElementById("confirmDeleteBtn");
+const cancelDeleteBtn = document.getElementById("cancelDelete");
+
+let deleteTarget = null;
+
+// OPEN CONFIRM MODAL
+function openDeleteConfirm(target, message) {
+    deleteTarget = target;
+    confirmMessage.textContent = message;
+    confirmDeleteModal.style.display = "flex";
+}
+
+// CANCEL DELETE
+cancelDeleteBtn.addEventListener("click", () => {
+    deleteTarget = null;
+    confirmDeleteModal.style.display = "none";
+});
+
+// CONFIRM DELETE
+confirmDeleteBtn.addEventListener("click", () => {
+    if (deleteTarget) {
+        deleteTarget.remove();
+        deleteTarget = null;
+    }
+    confirmDeleteModal.style.display = "none";
+    closeModal(); // also close info modal after delete
+});
+
+
+// ===================== DELETE BUTTON HOOKS =====================
+
+// BOOK DELETE
+document.querySelector(".BookInfoModal .delete-btn")
+?.addEventListener("click", () => {
+    const activeCard = document.querySelector(".books-instance");
+    openDeleteConfirm(activeCard, "Delete this book?");
+});
+
+// MEMBER DELETE
+document.querySelector(".MemberInfoModal .delete-btn")
+?.addEventListener("click", () => {
+    const activeCard = document.querySelector(".members-instance");
+    openDeleteConfirm(activeCard, "Delete this member?");
+});
+
+// BORROW DELETE
+document.querySelector(".BorrowInfoModal .delete-btn")
+?.addEventListener("click", () => {
+    const activeCard = document.querySelector(".borrow-instance");
+    openDeleteConfirm(activeCard, "Delete this record?");
+});
+
+
+// CLOSE CONFIRM MODAL ON OUTSIDE CLICK
+window.addEventListener("click", (e) => {
+    if (e.target === confirmDeleteModal) {
+        confirmDeleteModal.style.display = "none";
+        deleteTarget = null;
+    }
+});
+
+
+
 
 // ===================== MODALS =====================
 const bookModal = document.getElementById("bookModal");
