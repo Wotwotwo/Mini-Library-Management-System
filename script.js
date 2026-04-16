@@ -40,6 +40,8 @@ navLinks.forEach((link, index) => {
         } 
         else if (index === 1) {
             booksContent.style.display = 'flex';
+            loadBooks();
+            console.log("Books section loaded");
         } 
         else if (index === 2) {
             membersContent.style.display = 'flex';
@@ -242,12 +244,65 @@ document.querySelectorAll(".view-btn").forEach(btn => {
 
 
 // BOOK CARD CLICK
-document.querySelectorAll(".books-instance").forEach(card => {
-    card.addEventListener("click", () => {
-        bookInfoModal.style.display = "flex";
-    });
-});
+document.querySelector(".books-container").addEventListener("click", async (e) => {
 
+    const card = e.target.closest(".books-instance");
+
+    if (!card) return;
+
+    const bookId = card.dataset.id;
+
+    bookInfoModal.style.display = "flex";
+
+    try {
+        const response = await fetch(
+            `http://localhost/Mini-Library-Management-System/database.php?action=get_book_details&id=${bookId}`
+        );
+
+        
+
+        const data = await response.json();
+
+        console.log("Book data:", data);
+
+        // if PHP returned an error
+        if (data.error) {
+            alert(data.error);
+            return;
+        }
+
+        // fill modal with data
+        const modal = document.querySelector(".BookInfoModal");
+
+        // Title
+        modal.querySelector(".book-title-section h1").textContent = data.title;
+
+        // Book Cover (optional but useful)
+        modal.querySelector(".book-info-cover").src =
+            data.image_path ? "Images/" + data.image_path : "Images/Book_Cover.png";
+
+        // Book ID
+        modal.querySelectorAll(".info-row p")[0].textContent =
+            "#B" + String(data.book_id).padStart(5, "0");
+
+        // Author
+        modal.querySelectorAll(".info-row p")[1].textContent = data.author;
+
+        // Genre
+        modal.querySelectorAll(".info-row p")[2].textContent = data.genre;
+
+        // Published Year
+        modal.querySelectorAll(".info-row p")[3].textContent = data.published_year;
+
+        // Status
+        modal.querySelectorAll(".info-row p")[4].textContent = data.status;
+
+        // Description
+        modal.querySelectorAll(".info-row p")[5].textContent = data.description;
+            } catch (err) {
+        console.error("Fetch failed:", err);
+    }
+});
 
 // BORROW ROW CLICK
 document.querySelectorAll(".borrow-instance").forEach(card => {
@@ -337,3 +392,34 @@ new Chart(ctx, {
     options: options,
     plugins: [centerTextPlugin]
 });
+
+
+// ===================== BACKEND CONNECTION ======================
+function loadBooks() {
+    const container = document.querySelector(".books-container");
+
+    fetch("http://localhost/Mini-Library-Management-System/database.php?action=get_books")
+        .then(res => res.json())
+        .then(books => {
+
+            container.innerHTML = "";
+
+            books.forEach(book => {
+
+                const status = (book.status || "Unknown").toLowerCase();
+
+                container.innerHTML += `
+                    <div class="books-instance" data-id="${book.book_id}">
+                        <img src="${book.image_path ? 'Images/' + book.image_path : 'Images/Book_Cover.png'}" class="book-cover">
+
+                        <h2>${book.title}</h2>
+                        <p>${book.author}</p>
+
+                        <span class="status ${status}">
+                            ${book.status}
+                        </span>
+                    </div>
+                `;
+            });
+        })
+}   
