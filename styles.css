@@ -26,7 +26,7 @@ body {
     background-color: #ffffff;
     padding: 20px;
     border-radius: 16px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
 }
 
 .logo {
@@ -47,12 +47,12 @@ body {
 /* Links */
 .nav-links a {
     text-decoration: none;
-    color: #333; 
+    color: #333;
     font-size: 16px;
-    display: flex; 
-    align-items: center; 
-    gap: 10px; 
-    padding: 18px 12px; 
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 18px 12px;
     border-radius: 100px;
     transition: 0.3s;
     padding-left: 15px;
@@ -62,6 +62,7 @@ body {
 .nav-links a.active {
     background-color: #E8DEF8;
 }
+
 /* Icons */
 .nav-links img {
     width: 20px;
@@ -89,14 +90,14 @@ body {
 
 /*-------------------- BANNER --------------------*/
 .banner {
-    margin-top: -15px; 
+    margin-top: -15px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: #ffffff;
     padding: 10px 25px;
     border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
     margin-bottom: 20px;
 }
 
@@ -127,7 +128,7 @@ body {
 .user-text {
     display: flex;
     flex-direction: column;
-    text-align: left; 
+    text-align: left;
 }
 
 .username {
@@ -146,13 +147,13 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 6px; 
+    padding: 6px;
     background-color: transparent;
     border: none;
     border-radius: 6px;
     cursor: pointer;
     transition: 0.3s;
-    margin-left: 20px; 
+    margin-left: 20px;
 
 }
 
@@ -162,7 +163,7 @@ body {
 }
 
 .logout-btn:hover {
-    background-color: #0000001a; 
+    background-color: #0000001a;
 }
 
 
@@ -181,7 +182,7 @@ body {
     background-color: #ffffff;
     padding: 20px;
     border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
     text-align: center;
     transition: transform 0.2s;
     display: flex;
@@ -200,7 +201,7 @@ body {
     margin-top: 20px;
     width: 40px;
     height: 40px;
-    margin-bottom: 18px; 
+    margin-bottom: 18px;
 }
 
 /* Numbers */
@@ -208,471 +209,478 @@ body {
     font-size: 28px;
     font-weight: bold;
     color: #333;
-    margin-top: 6px; 
+    margin-top: 6px;
 }
 
 /* Information */
 .overview-card h3 {
     font-size: 16px;
     color: #666;
-    margin-top: 4px; 
+    margin-top: 4px;
 }
 
 
 
 /*-------------------- CONTENT AREA --------------------*/
 
-    /*------ Overview Graph ------ */
-    .content_overview {
-        background-color: #fff;
-        padding: 20px;
-        border-radius: 12px;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-        display: none;
-    }
-
-    /* Center chart in content */
-    .content_overview canvas {
-        display: block;
-        margin: 20px auto;
-        max-width: 250px;
-        height: auto;
-    }
-
-    /* Graph */
-    #bookDonutChart {
-        max-width: 500px;
-        max-height: 500px;
-        margin: auto;
-    }
-
-
-
-
-    /*------ Overview Books ------ */
-    .content_books {
-        background-color: #fff;
-        padding: 20px;
-        border-radius: 12px;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-        display: none;
-        flex-direction: column;
-        gap: 20px;
-    }
-
-        /*------ Navigation ------*/
-        .books_navigation {
-            display: flex;
-            align-items: center;
-            gap: 15px; 
-        }
-
-        /* Search Bar */
-        .search-bar {
-            display: flex;
-            width: 60%;
-            align-items: center;
-            position: relative;
-            height: 48px;
-        }
-
-        .search-bar input {
-            width: 100%;
-            padding: 0 40px; /* space for icons */
-            height: 100%;
-            border-radius: 28px;
-            border: 1px solid #ECE6F0;
-            font-size: 14px;
-            background-color: #ECE6F0;
-        }
-
-        .search-bar input:focus {
-            border-color: #ddcbe9; 
-            outline: none;
-        }
-
-        /* Icons inside search bar */
-        .search-icon.left {
-            position: absolute;
-            left: 12px;
-            width: 30px;
-            height: 30px;
-        }
-
-        .search-icon.right {
-            position: absolute;
-            right: 12px;
-            width: 40px;
-            height: 40px;
-        }
-
-        /* Add Book Button */
-        .add-book-btn {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            padding: 0 16px;
-            height: 48px; 
-            border: none;
-            border-radius: 28px;
-            background-color: #E8DEF8;
-            color: #4A4459;
-            font-size: 14px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: 0.3s;
-            white-space: nowrap; 
-            margin-left: auto; /* pushes it to the right */
-
-        }
-
-        .add-book-btn img {
-            width: 18px;
-            height: 18px;
-        }
-
-        .add-book-btn:hover {
-            background-color: #d8c7f3;
-        }
-
-        /* Books Container */
-        .books-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-            gap: 20px;
-        }
-
-
-
-        /*------ Book containers ------*/
-        
-        .books-instance {
-            background-color: #f9f9f9;
-            border-radius: 12px;
-            padding: 12px;
-            text-align: center;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-        }
-
-        .books-instance img.book-cover {
-            width: 100%;
-            height: 180px;
-            object-fit: cover;
-            border-radius: 8px;
-            margin-bottom: 8px;
-        }
-
-        .books-instance h2 {
-            font-size: 16px;
-            margin: 5px 0;
-        }
-
-        .books-instance p {
-            font-size: 12px;
-            color: #666;
-        }
-        /* Push buttons to the right */
-        .book-actions {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            margin-left: auto; /* key line */
-        }
-
-        /* Sort button */
-        .sort-book-btn {
-            width: 48px;
-            height: 48px;
-            border: none;
-
-            background-color: transparent;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-        }
-
-
-
-
-
-
-        /*------ Book Container ------*/
-        /* Books grid */
-        .books-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-            gap: 20px;
-        }
-
-        /* Book card */
-        .books-instance {
-            background-color: #ffffff;
-            border-radius: 12px;
-            padding: 12px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-            display: flex;
-            flex-direction: column;
-            transition: 0.3s;
-        }
-
-        /* Hover effect */
-        .books-instance:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 16px rgba(0,0,0,0.1);
-        }
-
-        /* Book cover */
-        .book-cover {
-            width: 100%;
-            height: 180px;
-            object-fit: cover;
-            border-radius: 8px;
-            margin-bottom: 10px;
-        }
-
-        /* Title */
-        .books-instance h2 {
-            font-size: 16px;
-            margin-bottom: 5px;
-            color: #333;
-        }
-
-        /* Description */
-        .books-instance p {
-            font-size: 13px;
-            color: #666;
-        }
-
-        /* Status badge */
-        .status {
-            margin-top: 10px;
-            align-self: center;
-            padding: 4px 10px;
-            border-radius: 20px;
-            font-size: 12px;
-            font-weight: bold;
-        }
-
-        /* Available */
-        .status.available {
-            background-color: #e6f7ee;
-            color: #2e7d32;
-        }
-
-        /* Overdue */
-        .status.overdue {
-            background-color: #fdecea;
-            color: #c62828;
-        }
-
-        /* Borrowed */
-        .status.borrowed {
-            background-color: #e3f2fd;
-            color: #1565c0;
-        }
-
-
-
-
-
-        
-    /*------ Overview Members ------ */
-
-
-    .content_Members {
-        background-color: #fff;
-        padding: 20px;
-        border-radius: 12px;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-    }
-
-    .members_navigation {
-            display: flex;
-            align-items: center;
-            gap: 15px; 
-    }
-
-
-
-
-
-
-    /*------ Members Container ------*/
-        .members-container {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-
-        /* Each member row */
-        .members-instance {
-            width: 100%;
-            background-color: #ffffff;
-            padding: 15px 20px;
-            border-radius: 12px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-
-            display: flex;
-            align-items: center;
-            justify-content: space-between; /* pushes button right */
-            transition: 0.2s;
-        }
-
-        /* Hover effect */
-        .members-instance:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-        }
-
-        /* Left side (name + ID) */
-        .member-info {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .member-info h2 {
-            font-size: 16px;
-            color: #333;
-            margin-bottom: 4px;
-        }
-
-        .member-info p {
-            font-size: 13px;
-            color: #666;
-        }
-
-        /* Button */
-        .view-btn {
-            padding: 8px 16px;
-            border: none;
-            border-radius: 8px;
-            background-color: #34344a;
-            color: #fff;
-            font-size: 13px;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-
-        /* Hover */
-        .view-btn:hover {
-            background-color: #4a4a63;
-        }
-
-
-
-
-
-    /*------ Overview Borrow ------ */
-
-
-
-    .content_borrow {
-        background-color: #fff;
-        padding: 20px;
-        border-radius: 12px;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-        display: none;
-        flex-direction: column;
-        gap: 20px;
-    }
-        /* Container */
-        .borrow-container {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-
-        /* Each borrow row */
-        .borrow-instance {
-            width: 100%;
-            background-color: #ffffff;
-            padding: 18px 22px;
-            border-radius: 12px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            transition: 0.2s;
-        }
-
-        /* Hover */
-        .borrow-instance:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-        }
-
-        /* General Information*/
-        .borrow-info {
-            display: flex;
-            align-items: flex-start;
-            gap: 16px;
-        }
-
-        .borrow-info img {
-            width: 15%;
-            height: 100%;
-            border-radius: 8px;
-            object-fit: cover;
-        }
-
-        /* Title  */
-        .borrow-info h2 {
-            grid-column: span 2; /* takes full row */
-            font-size: 16px;
-            color: #333;
-            margin-bottom: 6px;
-        }
-
-        .borrow-info p {
-            font-size: 13px;
-            color: #666;
-        }
-
-        /* Status */
-        .status {
-            padding: 6px 14px;
-            border-radius: 20px;
-            font-size: 12px;
-            font-weight: bold;
-            text-align: center;
-        }
-
-
-
-        /* Status colors */
-        .status.overdue {
-            background-color: rgba(255, 99, 132, 0.15);
-            color: #ff6384;
-        }
-
-        .status.returned {
-            background-color: rgba(75, 192, 192, 0.15);
-            color: #4bc0c0;
-        }
-
-        .status.borrowed {
-            background-color: rgba(255, 206, 86, 0.2);
-            color: #ff9f40;
-        }
+/*------ Overview Graph ------ */
+.content_overview {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    display: none;
+}
+
+/* Center chart in content */
+.content_overview canvas {
+    display: block;
+    margin: 20px auto;
+    max-width: 250px;
+    height: auto;
+}
+
+/* Graph */
+#bookDonutChart {
+    max-width: 500px;
+    max-height: 500px;
+    margin: auto;
+}
+
+
+
+
+/*------ Overview Books ------ */
+.content_books {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    display: none;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/*------ Navigation ------*/
+.books_navigation {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Search Bar */
+.search-bar {
+    display: flex;
+    width: 60%;
+    align-items: center;
+    position: relative;
+    height: 48px;
+}
+
+.search-bar input {
+    width: 100%;
+    padding: 0 40px;
+    /* space for icons */
+    height: 100%;
+    border-radius: 28px;
+    border: 1px solid #ECE6F0;
+    font-size: 14px;
+    background-color: #ECE6F0;
+}
+
+.search-bar input:focus {
+    border-color: #ddcbe9;
+    outline: none;
+}
+
+/* Icons inside search bar */
+.search-icon.left {
+    position: absolute;
+    left: 12px;
+    width: 30px;
+    height: 30px;
+}
+
+.search-icon.right {
+    position: absolute;
+    right: 12px;
+    width: 40px;
+    height: 40px;
+}
+
+/* Add Book Button */
+.add-book-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 0 16px;
+    height: 48px;
+    border: none;
+    border-radius: 28px;
+    background-color: #E8DEF8;
+    color: #4A4459;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    white-space: nowrap;
+    margin-left: auto;
+    /* pushes it to the right */
+
+}
+
+.add-book-btn img {
+    width: 18px;
+    height: 18px;
+}
+
+.add-book-btn:hover {
+    background-color: #d8c7f3;
+}
+
+/* Books Container */
+.books-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 20px;
+}
+
+
+
+/*------ Book containers ------*/
+
+.books-instance {
+    background-color: #f9f9f9;
+    border-radius: 12px;
+    padding: 12px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.books-instance img.book-cover {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 8px;
+}
+
+.books-instance h2 {
+    font-size: 16px;
+    margin: 5px 0;
+}
+
+.books-instance p {
+    font-size: 12px;
+    color: #666;
+}
+
+/* Push buttons to the right */
+.book-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-left: auto;
+    /* key line */
+}
+
+/* Sort button */
+.sort-book-btn {
+    width: 48px;
+    height: 48px;
+    border: none;
+
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+
+
+
+
+
+/*------ Book Container ------*/
+/* Books grid */
+.books-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 20px;
+}
+
+/* Book card */
+.books-instance {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    transition: 0.3s;
+}
+
+/* Hover effect */
+.books-instance:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* Book cover */
+.book-cover {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+/* Title */
+.books-instance h2 {
+    font-size: 16px;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+/* Description */
+.books-instance p {
+    font-size: 13px;
+    color: #666;
+}
+
+/* Status badge */
+.status {
+    margin-top: 10px;
+    align-self: center;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+/* Available */
+.status.available {
+    background-color: #e6f7ee;
+    color: #2e7d32;
+}
+
+/* Overdue */
+.status.overdue {
+    background-color: #fdecea;
+    color: #c62828;
+}
+
+/* Borrowed */
+.status.borrowed {
+    background-color: #e3f2fd;
+    color: #1565c0;
+}
+
+
+
+
+
+
+/*------ Overview Members ------ */
+
+
+.content_Members {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.members_navigation {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+
+
+
+
+
+/*------ Members Container ------*/
+.members-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Each member row */
+.members-instance {
+    width: 100%;
+    background-color: #ffffff;
+    padding: 15px 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* pushes button right */
+    transition: 0.2s;
+}
+
+/* Hover effect */
+.members-instance:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Left side (name + ID) */
+.member-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.member-info h2 {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 4px;
+}
+
+.member-info p {
+    font-size: 13px;
+    color: #666;
+}
+
+/* Button */
+.view-btn {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 8px;
+    background-color: #34344a;
+    color: #fff;
+    font-size: 13px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* Hover */
+.view-btn:hover {
+    background-color: #4a4a63;
+}
+
+
+
+
+
+/*------ Overview Borrow ------ */
+
+
+
+.content_borrow {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    display: none;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Container */
+.borrow-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Each borrow row */
+.borrow-instance {
+    width: 100%;
+    background-color: #ffffff;
+    padding: 18px 22px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.2s;
+}
+
+/* Hover */
+.borrow-instance:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* General Information*/
+.borrow-info {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+}
+
+.borrow-info img {
+    width: 15%;
+    height: 100%;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+/* Title  */
+.borrow-info h2 {
+    grid-column: span 2;
+    /* takes full row */
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 6px;
+}
+
+.borrow-info p {
+    font-size: 13px;
+    color: #666;
+}
+
+/* Status */
+.status {
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
+}
+
+
+
+/* Status colors */
+.status.overdue {
+    background-color: rgba(255, 99, 132, 0.15);
+    color: #ff6384;
+}
+
+.status.returned {
+    background-color: rgba(75, 192, 192, 0.15);
+    color: #4bc0c0;
+}
+
+.status.borrowed {
+    background-color: rgba(255, 206, 86, 0.2);
+    color: #ff9f40;
+}
 
 
 /* -------------------- POP UPS -------------------- */
 
 /* Modal base */
 .modal {
-  display: flex;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.5);
-  z-index: 2000;
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 2000;
 }
 
 .delete-btn {
@@ -691,51 +699,53 @@ body {
 }
 
 .modal-content {
-  background: white;
-  width: 400px;
-  margin: 5% auto;
-  padding: 20px;
-  border-radius: 12px;
-  max-height: 90vh;
-  overflow-y: auto;
+    background: white;
+    width: 400px;
+    margin: 5% auto;
+    padding: 20px;
+    border-radius: 12px;
+    max-height: 90vh;
+    overflow-y: auto;
 }
 
 .close {
-  float: right;
-  font-size: 22px;
-  cursor: pointer;
+    float: right;
+    font-size: 22px;
+    cursor: pointer;
 }
 
 h2 {
-  margin-bottom: 15px;
+    margin-bottom: 15px;
 }
 
 .form-group {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
 }
 
 label {
-  font-size: 14px;
-  margin-bottom: 3px;
+    font-size: 14px;
+    margin-bottom: 3px;
 }
 
-input, select, textarea {
-  padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
+input,
+select,
+textarea {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
 }
 
 textarea {
-  resize: none;
-  height: 60px;
+    resize: none;
+    height: 60px;
 }
 
 .form-actions {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 15px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
 }
 
 .form-actions button {
@@ -745,15 +755,15 @@ textarea {
 }
 
 button {
-  padding: 8px 12px;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
 }
 
 button[type="submit"] {
-  background: #2C2C2C;
-  color: white;
+    background: #2C2C2C;
+    color: white;
 }
 
 /* Image preview */
@@ -770,31 +780,33 @@ button[type="submit"] {
     object-fit: cover;
     border-radius: 8px;
     margin-top: 10px;
-    display: none; /* hidden until image selected */
+    display: none;
+    /* hidden until image selected */
     border: 1px solid #ddd;
 }
 
 /* modal settings */
-#membersModal .modal-content{
+#membersModal .modal-content {
     align-self: center;
     height: 60%;
 }
 
-#borrowModal .modal-content{
+#borrowModal .modal-content {
     align-self: center;
     height: 55%;
 }
 
 /* modal activators */
 
-#bookModal{
-    display: none;
-}
-#membersModal{
+#bookModal {
     display: none;
 }
 
-#borrowModal{
+#membersModal {
+    display: none;
+}
+
+#borrowModal {
     display: none;
 }
 
@@ -881,33 +893,33 @@ button[type="submit"] {
 /* Modal Activators */
 
 .MemberInfoModal {
-  display: none;
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.5);
-  z-index: 1000;
-  justify-content: center;
-  align-items: center;
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
 }
 
 .BookInfoModal {
-  display: none;
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.5);
-  z-index: 1000;
-  justify-content: center;
-  align-items: center;
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
 }
 
 .BorrowInfoModal {
-  display: none;
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.5);
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
 
-  justify-content: center;
-  align-items: center;
+    justify-content: center;
+    align-items: center;
 }
 
 /* confirmation of deletion */
@@ -921,13 +933,194 @@ button[type="submit"] {
 }
 
 
-.modal-content-delete{
-  background: white;
-  width: 400px;
-  margin: 5% auto;
-  padding: 20px;
-  border-radius: 12px;
-  height: 18%;
-  overflow-y: auto;
-  align-self: center;
+.modal-content-delete {
+    background: white;
+    width: 400px;
+    margin: 5% auto;
+    padding: 20px;
+    border-radius: 12px;
+    height: 18%;
+    overflow-y: auto;
+    align-self: center;
+}
+
+
+/*LOG IN PAGE*/
+.login-content {
+    display: flex;
+    flex: 1;
+    padding: 30px;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    width: 60%;
+}
+
+.header h1 {
+    margin-top: 10px;
+    font-size: 90px;
+    color: #2F1D54;
+}
+
+.header h3 {
+    margin-top: 5px;
+    font-size: 30px;
+    color: #2C2C2C;
+}
+
+.header p {
+    width: 90%;
+    margin-top: 20px;
+    font-size: 18px;
+    color: #757575;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+
+    height: 650px;
+    width: 650px;
+    position: fixed;
+    bottom: 100px;
+    right: 100px;
+
+    background-color: #ffffff;
+    padding: 40px;
+    border: solid 2px #d9d9d9;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    text-align: left;
+}
+
+.form-title {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.form-title h2 {
+    margin-top: 40px;
+}
+
+.form-title img {
+    height: 100px;
+    width: 100px;
+    border-radius: 100px;
+
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-size: 25px;
+    margin-bottom: 5px;
+    margin-top: 30px;
+}
+
+.form-group input {
+    font-size: 25px;
+    width: 100%;
+    padding: 20px;
+    border: solid 1px #d9d9d9;
+    border-radius: 16px;
+}
+
+.form-group select {
+    width: 100%;
+    padding: 20px;
+    font-size: 25px;
+
+    border: 1px solid #d9d9d9;
+    border-radius: 16px;
+
+    background-color: white;
+    color: #333;
+
+    cursor: pointer;
+
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+.form-action {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 15px;
+    grid-column: span 2;
+}
+
+.form-action button {
+    width: 100%;
+    height: 60px;
+    font-size: 100%;
+}
+
+button {
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.sign-in button[type="submit"] {
+    margin-top: 90px;
+    margin-bottom: 20px;
+    height: 60px;
+    width: 100%;
+    padding: 20px;
+    background: #2C2C2C;
+    color: white;
+    font-size: 20px;
+}
+
+.sign-in button[type="submit"]:active {
+    background-color: #757575;
+    border: 1px solid #2C2C2C;
+}
+
+
+.register-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+
+    background-color: #ffffff;
+    border-radius: 10px;
+}
+
+.card:hover {
+    cursor: pointer;
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+    width: 75%;
+    height: 300px;
+    border: 2px solid #d9d9d9;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.card img {
+    margin-bottom: 20px;
+}
+
+#register-confirmation {
+    display: none;
 }
