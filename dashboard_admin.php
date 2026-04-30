@@ -1,3 +1,17 @@
+<?php
+session_start();
+
+header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
+header("Cache-Control: post-check=0, pre-check=0", false);
+header("Pragma: no-cache");
+header("Expires: 0");
+
+if (!isset($_SESSION['member_id'])) {
+    header("Location: login.html");
+    exit();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,6 +28,14 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 </head>
+
+<script>
+window.addEventListener("pageshow", function(event) {
+    if (event.persisted) {
+        window.location.reload();
+    }
+});
+</script>
 
 <body>
 
@@ -43,13 +65,13 @@
 
                 <div class="user-info">
                     <img src="Images/Default_User_Profile.png" alt="Profile" class="profile-pic">
-                    <div class="user-text">
+                    <div class="user-text">x
                         <p class="username">Username</p>
                         <p class="role">ADMIN</p>
                     </div>
-                    <button class="logout-btn">
+                    <a href="logout.php" class="logout-btn">
                         <img src="Images/Log_out_Icon.png" alt="Log Out">
-                    </button>
+                    </a>
                 </div>
             </div>
 

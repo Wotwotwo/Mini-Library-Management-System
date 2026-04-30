@@ -1,6 +1,6 @@
 <?php
 session_start();
-include 'database.php';
+include 'db_connect.php';
 
 if($_SERVER["REQUEST_METHOD"] == "POST"){
     $email = $_POST['email'];
@@ -13,26 +13,24 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     $stmt->execute();
     $result = $stmt->get_result();
 
-    if($result->num_rows > 0){
+    if ($result->num_rows > 0){
         $row = $result->fetch_assoc();
-
-        if(password_verify($password, $row['password'])){
-            
+        if (password_verify($password, $row['password'])){
             $_SESSION['member_id'] = $row['m_id'];
             $_SESSION['role'] = $row['role'];
 
             if($row['role'] == "admin") {
-                header("Location: admin_dashboard.php");
+                header("Location: dashboard_admin.php");
                 exit();
             } elseif ($row['role'] == "student"){
-                header("Location: student_dashboard.php");
+                header("Location: dashboard_admin.php");
                 exit();
             }
         }else {
-                echo "Error";
+                echo "Incorrect password.";
             }
-    }else {
-        echo "Invalid username or password";
+    }else{
+        echo "User not found.";
     }
 }
 

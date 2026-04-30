@@ -37,15 +37,15 @@ navLinks.forEach((link, index) => {
         // Switch content using index
         if (index === 0) {
             overviewContent.style.display = 'flex';
-        } 
+        }
         else if (index === 1) {
             booksContent.style.display = 'flex';
             loadBooks();
             console.log("Books section loaded");
-        } 
+        }
         else if (index === 2) {
             membersContent.style.display = 'flex';
-        } 
+        }
         else if (index === 3) {
             borrowContent.style.display = 'flex';
         }
@@ -73,28 +73,28 @@ overviewCards.forEach((card, index) => {
 
 // BOOK EDIT
 document.querySelector(".BookInfoModal .edit-btn")
-?.addEventListener("click", () => {
-    bookModal.style.display = "flex";
+    ?.addEventListener("click", () => {
+        bookModal.style.display = "flex";
 
-    // Change modal title
-    bookModal.querySelector("h2").textContent = "Edit Book";
-});
+        // Change modal title
+        bookModal.querySelector("h2").textContent = "Edit Book";
+    });
 
 // MEMBER EDIT
 document.querySelector(".MemberInfoModal .edit-btn")
-?.addEventListener("click", () => {
-    membersModal.style.display = "flex";
+    ?.addEventListener("click", () => {
+        membersModal.style.display = "flex";
 
-    membersModal.querySelector("h2").textContent = "Edit Member";
-});
+        membersModal.querySelector("h2").textContent = "Edit Member";
+    });
 
 // BORROW EDIT
 document.querySelector(".BorrowInfoModal .edit-btn")
-?.addEventListener("click", () => {
-    borrowModal.style.display = "flex";
+    ?.addEventListener("click", () => {
+        borrowModal.style.display = "flex";
 
-    borrowModal.querySelector("h2").textContent = "Edit Borrow Record";
-});
+        borrowModal.querySelector("h2").textContent = "Edit Borrow Record";
+    });
 
 
 // ===================== DELETE SYSTEM =====================
@@ -134,24 +134,24 @@ confirmDeleteBtn.addEventListener("click", () => {
 
 // BOOK DELETE
 document.querySelector(".BookInfoModal .delete-btn")
-?.addEventListener("click", () => {
-    const activeCard = document.querySelector(".books-instance");
-    openDeleteConfirm(activeCard, "Delete this book?");
-});
+    ?.addEventListener("click", () => {
+        const activeCard = document.querySelector(".books-instance");
+        openDeleteConfirm(activeCard, "Delete this book?");
+    });
 
 // MEMBER DELETE
 document.querySelector(".MemberInfoModal .delete-btn")
-?.addEventListener("click", () => {
-    const activeCard = document.querySelector(".members-instance");
-    openDeleteConfirm(activeCard, "Delete this member?");
-});
+    ?.addEventListener("click", () => {
+        const activeCard = document.querySelector(".members-instance");
+        openDeleteConfirm(activeCard, "Delete this member?");
+    });
 
 // BORROW DELETE
 document.querySelector(".BorrowInfoModal .delete-btn")
-?.addEventListener("click", () => {
-    const activeCard = document.querySelector(".borrow-instance");
-    openDeleteConfirm(activeCard, "Delete this record?");
-});
+    ?.addEventListener("click", () => {
+        const activeCard = document.querySelector(".borrow-instance");
+        openDeleteConfirm(activeCard, "Delete this record?");
+    });
 
 
 // CLOSE CONFIRM MODAL ON OUTSIDE CLICK
@@ -180,21 +180,21 @@ const borrowInfoModal = document.querySelector(".BorrowInfoModal");
 
 // Add Book
 document.querySelector(".content_books .add-book-btn")
-.addEventListener("click", () => {
-    bookModal.style.display = "flex";
-});
+    .addEventListener("click", () => {
+        bookModal.style.display = "flex";
+    });
 
 // Add Member
 document.querySelector(".content_Members .add-book-btn")
-.addEventListener("click", () => {
-    membersModal.style.display = "flex";
-});
+    .addEventListener("click", () => {
+        membersModal.style.display = "flex";
+    });
 
 // Add Borrow
 document.querySelector(".content_borrow .add-book-btn")
-?.addEventListener("click", () => {
-    borrowModal.style.display = "flex";
-});
+    ?.addEventListener("click", () => {
+        borrowModal.style.display = "flex";
+    });
 
 
 // ===================== CLOSE MODAL =====================
@@ -220,6 +220,7 @@ window.addEventListener("click", (e) => {
     if (e.target === bookModal) closeModal();
     if (e.target === membersModal) closeModal();
     if (e.target === borrowModal) closeModal();
+    if (e.target === registerModal) closeModal();
 
     if (e.target === memberInfoModal) closeModal();
     if (e.target === bookInfoModal) closeModal();
@@ -259,7 +260,7 @@ document.querySelector(".books-container").addEventListener("click", async (e) =
             `http://localhost/Mini-Library-Management-System/database.php?action=get_book_details&id=${bookId}`
         );
 
-        
+
 
         const data = await response.json();
 
@@ -299,7 +300,7 @@ document.querySelector(".books-container").addEventListener("click", async (e) =
 
         // Description
         modal.querySelectorAll(".info-row p")[5].textContent = data.description;
-            } catch (err) {
+    } catch (err) {
         console.error("Fetch failed:", err);
     }
 });
@@ -337,14 +338,14 @@ const data = {
 // Determine largest value for center
 const maxIndex = data.datasets[0].data.indexOf(Math.max(...data.datasets[0].data));
 const percentage = Math.round((data.datasets[0].data[maxIndex] /
-                   data.datasets[0].data.reduce((a,b) => a+b) * 100));
+    data.datasets[0].data.reduce((a, b) => a + b) * 100));
 const labelText = data.labels[maxIndex];
 
 // Center Text
 const centerTextPlugin = {
     id: 'centerText',
     beforeDraw(chart) {
-        const {ctx, width, height} = chart;
+        const { ctx, width, height } = chart;
         ctx.save();
 
         const centerY = height / 2 + 30;
@@ -353,11 +354,11 @@ const centerTextPlugin = {
         ctx.fillStyle = "#333";
         ctx.textAlign = "center";
         ctx.textBaseline = "middle";
-        ctx.fillText(percentage + "%", (width +35)/ 2, centerY - 10);
+        ctx.fillText(percentage + "%", (width + 35) / 2, centerY - 10);
 
         ctx.font = "20px sans-serif"; // size of label text
         ctx.fillStyle = "#666";
-        ctx.fillText(labelText, (width ) / 2, centerY + 45);
+        ctx.fillText(labelText, (width) / 2, centerY + 45);
 
         ctx.restore();
     }
